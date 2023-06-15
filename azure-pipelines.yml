@@ -7,7 +7,7 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: 'DockerHub'
-  imageRepository: 'mohanayalamanchi251/keda-container'
+  imageRepository: 'jaisairam/keda-container'
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'keda-container'
