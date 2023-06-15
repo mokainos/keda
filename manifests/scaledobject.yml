@@ -1,0 +1,17 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: sb 
+  namespace: default 
+spec:
+  scaleTargetRef:
+    name: sb 
+  minReplicaCount: 0
+  maxReplicaCount: 10
+  pollingInterval: 1
+  triggers:
+  - type: azure-servicebus
+    metadata:
+      queueName: 'testq' 
+      messageCount: '1'
+      connectionFromEnv: AzureWebJobsStorage
